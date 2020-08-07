@@ -1,0 +1,8 @@
+{
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "trailingComma": "none",
+  "htmlWhitespaceSensitivity": "css",
+  "singleQuote": true,
+  "semi": false
+}

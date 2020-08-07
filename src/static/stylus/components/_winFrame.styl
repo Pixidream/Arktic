@@ -1,0 +1,63 @@
+// mixins
+action-button(color)
+    background: color
+    width: 1em
+    height 1em
+    border-radius: 50%
+    margin: .5em
+    cursor: pointer
+    display: flex
+    justify-content: center
+    align-items: center
+    -webkit-app-region: none
+
+action-button-icon()
+    color: nord0
+    opacity: .8
+    font-size: .5em
+    display: none
+
+// css
+.winframe-root
+    width: 100%
+    height: 2.5em
+    background: nord2
+    -webkit-app-region: drag
+    display: flex
+
+    .winframe-actionbutton
+        width: 30%
+        height 100%
+        margin-left: 1em
+        display: flex
+        justify-content: start
+        align-items: center
+
+        .close
+            action-button(#BF616A)
+
+        .minimize
+            action-button(#EBCB8B)
+
+        .alwysontop
+            action-button(nord8)
+
+        .close,
+        .minimize,
+        .alwysontop
+
+            .action-icon
+                action-button-icon()
+
+            &:hover > .action-icon
+                display: inline-flex
+
+    .winframe-title
+        width: 70%
+        display: flex
+        align-items: center
+
+        .wintitle
+            margin-left: 4em
+            color: nord4
+            font-size: 1em
