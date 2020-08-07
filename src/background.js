@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, protocol, BrowserWindow, Tray, Menu } from 'electron'
+import { app, protocol, BrowserWindow } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import path from 'path'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
@@ -22,7 +22,7 @@ function createWindows () {
     height: 610,
     resizable: false,
     autoHideMenuBar: true,
-    icon: path.join(__dirname, '/icon.png'),
+    icon: path.join(__static, '/icon.png'),
     vibrancy: true,
     backgroundColor: '#00000001',
     transparent: true,
@@ -51,7 +51,7 @@ function createWindows () {
 }
 
 // fix white background
-app.disableHardwareAcceleration()
+// app.disableHardwareAcceleration() // ---> usefull for linux with nouveau driver, it remove glitch
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
